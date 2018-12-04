@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <!--style= "position: sticky;  top:0;"-->
+<div id="nameBar" > 
+
+    <h1>José María Morenete Nieto</h1>
+</div>
+
+<div id="navBar" style="position:sticky; top:0">
+    <nav>
+            <a href="#academic" onclick="show(academic)">
+            Academic Qualifications </a>
+  
+            <a href = "#awards">
+            Awards</a>
+     
+             <a href = "#workexperience">
+            Work Experience</a>
+     
+             <a href = "#skills">
+           Skills</a>
+    
+            <a href = "#languages">
+            Languages</a>
+    </nav>
+</div>
+
+
+    <div id="academic" display =none>
+        helloooo
+
+</div>
+
+<script>
+    function show(navId){
+        var x = document.getElementById(navId);
+        if(x.style.display ==="none"){
+            x.style.display = "block";
+        }
+        else{
+            x.style.display = "none";
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

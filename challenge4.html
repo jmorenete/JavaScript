@@ -1,0 +1,25 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <title>Challenge 4</title>
+</head>
+<body>
+    <script>
+        var Person = {
+        name:"jose",
+        age: 22,
+        occupation:'tester'
+     };
+    function ageCheck(){
+        if(Person.age>20 && Person.age<40){
+            document.getElementById("agestatement").innerHTML = "The person's age is between 20 and 40"
+        }
+        else{
+            document.getElementById("agestatement").innerHTML = "The person's age is NOT between 20 and 40"
+        }
+    }
+    </script>
+    <input type="button" onclick ="ageCheck()" value='test for age'/>
+    <p id="agestatement">?</p>
+</body>
+</html>

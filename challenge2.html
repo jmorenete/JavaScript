@@ -1,0 +1,36 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+
+<script type ="text/javascript">
+    function Hi(){
+        document.write("hello user");
+        alert("hiiiiie");
+    }
+    function square(num){
+        return num**2;
+       }
+    function sum(a,b,c){
+       return a+b+c;
+     }
+        
+    var Person = {
+        name:"jose",
+        age: 22,
+        occupation:'tester'
+     };
+    console.log(Person);
+    Person.name = "kiki"
+    function add1(){
+        Person.age+=1;
+    }
+    console.log(Person);
+
+</script>
+<body>
+    <input type="button" onclick="Hi()" value ="greetings earthlings"/>
+    <input type="button" onclick="add1(), console.log(Person)" value="add a year to age"/>
+</body>
+</html>
