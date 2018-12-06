@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+    <script>
+
+        var counter =0;
+        function createPar(){
+            counter++;
+            idstr ="A"+counter;
+            var div1 = document.createElement("div");
+            var x = document.createElement("p");
+            var b1 = document.createElement("button");
+            b1.innerHTML = "Delete";
+            b1.setAttribute("onclick", 'deleteline(this)');
+            b1.setAttribute("class","But");
+
+            x.innerHTML = "New Paragraph: "+ counter;
+            x.setAttribute("class", "Par");
+            div1.setAttribute("id",idstr);
+            
+            document.getElementById("paragraphs").append(div1);
+            document.getElementById(idstr).append(x);
+            document.getElementById(idstr).append(b1);
+        }
+    
+        function deleteline(sth){
+            id = sth.parentNode.id;
+            parent = document.getElementById("paragraphs");
+            child = document.getElementById(id);
+            parent.removeChild(child);
+        }
+        function changer(){
+            var y = document.getElementsByClassName("Par");
+            var txt = document.getElementById("userInput").value;
+
+            for (var i=0; i<y.length;i++){
+                y[i].innerHTML = txt;
+            }
+        }
+        
+        function deleting(){
+            parent = document.getElementById("paragraphs");
+            child = parent.lastElementChild
+            parent.removeChild(child);
+            
+        }
+
+    </script>
+    <input type="button" onclick ="createPar()" value = "create paragraph"/>
+    <input id="userInput" onchange= "changer()" placeholder="Enter text"/>
+    
+   <input type="button" onclick ="deleting()" value = "delete paragraph"/>
+    
+    <div id="paragraphs">
+    </div>
+</body>
+</html>

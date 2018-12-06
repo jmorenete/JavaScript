@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body type = "text/javascript">
+    <script>
+        var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+        var request = new XMLHttpRequest();
+
+        request.open("GET",requestURL);
+        
+        request.responseType = 'json';
+
+        request.send();
+
+        request.onload = function(){
+            var superheroes = request.response;
+            for(const key in superheroes){
+                if(typeof superheroes[key] === 'object'){
+                    for(var i=0; i<superheroes[key].length;i++){
+                        console.log(superheroes)
+                        for(const keys in superheroes[key][i]){
+                            let value = superheroes[key][i][keys];
+
+                            var par = document.createElement("p");
+                            var myHead = document.createElement("h1");
+                            myHead.textContent = keys;
+                        
+                            document.getElementsByTagName("body")[0].appendChild(myHead);
+
+                            par.textContent = value;
+                            document.getElementsByTagName("body")[0].appendChild(par);
+                            
+                        }
+                    }
+
+                }
+                else{
+                let value = superheroes[key];
+                var par = document.createElement("p");
+                var myHead = document.createElement("h1");
+
+                myHead.textContent = key;
+            
+                document.getElementsByTagName("body")[0].appendChild(myHead);
+
+                par.textContent = value;
+                document.getElementsByTagName("body")[0].appendChild(par);
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

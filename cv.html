@@ -1,4 +1,47 @@
 <!DOCTYPE html>
+<head>
+    <style>
+        body {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto; 
+        }
+
+        nav {
+        width: 100%;
+        /* margin: 20px 0; 
+        padding-left: 5%; 
+        padding-right: 5%; */
+        text-align: center;
+        
+        }
+
+        nav ul {
+        background: rgb(32, 41, 51);
+        width: 100%; 
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        }
+
+        nav ul li {
+        background: rgb(32, 41, 51);
+        width: 20%;
+        height:35px;
+        float:left;
+        }
+
+        nav ul li a {
+        display: block;
+        width: 100%;
+        }
+
+        #nameBar {
+        text-align: center;    
+        }
+
+    </style>
+</head>
 <html>
 <body>
     <!--style= "position: sticky;  top:0;"-->
@@ -7,35 +50,56 @@
     <h1>José María Morenete Nieto</h1>
 </div>
 
-<div id="navBar" style="position:sticky; top:0">
-    <nav>
-            <a href="#academic" onclick="show(academic)">
-            Academic Qualifications </a>
-  
-            <a href = "#awards">
-            Awards</a>
-     
-             <a href = "#workexperience">
-            Work Experience</a>
-     
-             <a href = "#skills">
-           Skills</a>
+<nav id="navBar" style="position:sticky; top:0">
+    <ul>
+        <li><a href="#academic" onclick="show('academic')">
+        Academic Qualifications</a></li>
+
+        <li><a href = "#awards" onclick="show('awards')">
+        Awards</a></li>
     
-            <a href = "#languages">
-            Languages</a>
-    </nav>
-</div>
+        <li> <a href = "#workexperience" onclick="show('workexperience')">
+        Work Experience</a></li>
+    
+        <li><a href = "#skills" onclick="show('skills')">
+        Skills</a></li>
+
+        <li><a href = "#languages" onclick="show('languages')">
+        Languages</a></li>
+    </ul>
+</nav>
 
 
-    <div id="academic" display =none>
+
+    <div id="academic" style = "display: none">
         helloooo
 
-</div>
+    </div>
+
+    <div id="awards" style = "display: none">
+        helloooo
+    
+    </div>
+
+    <div id="workexperience" style = "display: none">
+        helloooo
+        
+    </div>
+
+    <div id="skills" style = "display: none">
+        helloooo
+        
+    </div>
+    <div id="languages" style = "display: none">
+        helloooo
+            
+     </div>
+
 
 <script>
     function show(navId){
         var x = document.getElementById(navId);
-        if(x.style.display ==="none"){
+        if(x.style.display == "none"){
             x.style.display = "block";
         }
         else{

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body type = "text/javascript">
+    <script>
+        'use strict'
+        function searcher(){
+        var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
+        var request = new XMLHttpRequest();
+
+        request.open("GET",requestURL);
+        
+        request.responseType = 'json';
+
+        request.send();
+
+        request.onload = function(){
+            var kings = request.response;
+            var inputuser = document.getElementById('userInput').value;
+            var parent = document.getElementById('output');
+
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        
+            for(const key in kings){
+                for(const key2 in kings[key]){
+                    if(key2=="nm" && kings[key][key2].includes(inputuser)){
+                        for(var pos in kings[key]){
+                        var outcome = kings[key][pos];
+                        var kinginfo = document.createElement('p');
+                        kinginfo.setAttribute("class","info");
+
+                        if(pos =="nm"){
+                            pos = "Name";
+                        }
+                        if(pos == "cty"){
+                            pos = "City";
+                        }
+                        if(pos =='hse'){
+                            pos = "House";
+                        }
+                        if(pos == 'yrs'){
+                            pos = 'Years';
+                        }
+                        kinginfo.textContent = pos + ": " + outcome;
+                        
+                        document.getElementById('output').append(kinginfo);
+                        }
+                    }
+                }
+            }
+           
+            
+            
+        }
+        }
+    </script>
+    <input id = 'userInput' onchange = "searcher()" placeholder="Enter name of king you wish to search for"/>
+    <h3>Here is the information for the king:</h3>
+    <div id='output'></div>
+</body>
+</html>

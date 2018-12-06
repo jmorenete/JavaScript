@@ -18,6 +18,14 @@
             document.getElementById("agestatement").innerHTML = "The person's age is NOT between 20 and 40"
         }
     }
+    var a = new Object();
+    a.name = "Bob";
+    a.job = "trainer";
+
+    function ageCheck2(){
+      return a.name || a.job;
+    }
+    console.log(ageCheck2());
     </script>
     <input type="button" onclick ="ageCheck()" value='test for age'/>
     <p id="agestatement">?</p>
